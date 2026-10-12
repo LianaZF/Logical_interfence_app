@@ -1,0 +1,33 @@
+{
+  "format": "neuro-fuzzy-rules",
+  "version": 1,
+  "feature_names": ["X1", "Уровень"],
+  "target_name": "Класс",
+  "class_labels": ["Состояние A", "Состояние B"],
+  "column_encodings": [
+    {"source_name": "X1", "kind": "numeric", "output_names": ["X1"], "categories": []},
+    {"source_name": "Уровень", "kind": "ordinal", "output_names": ["Уровень"], "categories": ["низкий", "высокий"]}
+  ],
+  "rules": [
+    {
+      "number": 1,
+      "terms": ["small", "низкий"],
+      "consequent": "Состояние A",
+      "cf": [0.82, 0.91],
+      "memberships": [
+        {"feature_name": "X1", "term_name": "small", "left_base": [0, 0.1], "left_core": [0.8, 1], "right_core": [2, 2.2], "right_base": [3, 3.2]},
+        {"feature_name": "Уровень", "term_name": "низкий", "left_base": [-0.5, -0.4], "left_core": [-0.2, -0.1], "right_core": [0.1, 0.2], "right_base": [0.4, 0.5]}
+      ]
+    },
+    {
+      "number": 2,
+      "terms": ["large", "высокий"],
+      "consequent": "Состояние B",
+      "cf": [0.88, 0.96],
+      "memberships": [
+        {"feature_name": "X1", "term_name": "large", "left_base": [2, 2.2], "left_core": [2.8, 3], "right_core": [4, 4.2], "right_base": [5, 5.2]},
+        {"feature_name": "Уровень", "term_name": "высокий", "left_base": [0.5, 0.6], "left_core": [0.8, 0.9], "right_core": [1.1, 1.2], "right_base": [1.4, 1.5]}
+      ]
+    }
+  ]
+}

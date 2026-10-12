@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+.build-tools/
+.runtime-tk/
+build/
+build-v2/
